@@ -1,0 +1,13 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+  {% for room in rooms %}
+    <div class="room">
+      <div class="date">
+        <p>published: {{ room.published_date }}</p>
+      </div>
+      <h1><a href="{% url 'room_detail' pk=room.pk %}">{{ room.title }}</a></h1>
+      <p>{{ room.text|linebreaksbr }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
