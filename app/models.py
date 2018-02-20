@@ -51,7 +51,6 @@ class Room(models.Model):
     text = models.TextField()
     university = models.ForeignKey(University)
 
-    #뭐하는 기능인지
     def publish(self):
         self.published_date = timezone.now()
         self.save()
