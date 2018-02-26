@@ -10,6 +10,7 @@ class RoomForm(forms.ModelForm):
         'rentfee_ori',
         'deposit_new',
         'rentfee_new',
+        'address',
         'manage_fee',
         'date_start',
         'date_end',
