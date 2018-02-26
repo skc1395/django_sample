@@ -18,8 +18,8 @@ def room_new(request):
         form = RoomForm(request.POST)
         if form.is_valid():
             room = form.save(commit=False)
-            address_lng = Get_geocode(request.POST['address'],constant.API_KEY)[0]
-            address_lat = Get_geocode(request.POST['address'],constant.API_KEY)[1]
+            room.address_lng = Get_geocode(request.POST['address'],constant.API_KEY)[0]
+            room.address_lat = Get_geocode(request.POST['address'],constant.API_KEY)[1]
             room.published_date = timezone.now()
             room.save()
             return redirect('room_detail', pk=room.pk)
